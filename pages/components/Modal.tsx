@@ -35,6 +35,7 @@ const Modal: React.FC<ModalListProps> = ({
       >
         Show Modal
       </button>
+      <br /> <br />
       <div>
         Lorem Ipsum is simply dummy text of the printing and typesetting
         industry. Lorem Ipsum has been the industrys standard dummy text ever
@@ -63,24 +64,28 @@ const Modal: React.FC<ModalListProps> = ({
                   </button>
                 </div>
                 <div className="relative p-6 flex-auto">
-                  <form className="bg-gray-200 shadow-md rounded px-8 pt-6 pb-8 w-full">
-                    <label className="block text-black text-sm font-bold mb-1">
-                      {body}
-                    </label>
-                    <input className="shadow appearance-none border rounded w-full py-2 px-1 text-black mb-4" />
-                    <label className="block text-black text-sm font-bold mb-1">
-                      {body}
-                    </label>
-                    <input className="shadow appearance-none border rounded w-full py-2 px-1 text-black mb-4" />
-                    <label className="block text-black text-sm font-bold mb-1">
-                      {body}
-                    </label>
-                    <input className="shadow appearance-none border rounded w-full py-2 px-1 text-black mb-4 " />
-                    <label className="block text-black text-sm font-bold mb-1">
-                      {body}
-                    </label>
-                    <input className="shadow appearance-none border rounded w-full py-2 px-1 text-black mb-4" />
+                  <form className="bg-gray-200 shadow-sm rounded px-8 pt-2 pb-2 w-full mb-4">
+                    <div className="flex items-center justify-center p-2">
+                      <h5 className="text-1xl font=semibold"> {header} </h5>
+                    </div>
                   </form>
+                  <div className="pt-6 md:p-8 text-center md:text-left space-y-4">
+                    <blockquote>
+                      <p className="text-lg font-medium">
+                        “Tailwind CSS is the only framework that Ive seen scale
+                        on large teams. Its easy to customize, adapts to any
+                        design, and the build size is tiny.”
+                      </p>
+                    </blockquote>
+                    <figcaption className="font-medium">
+                      <div className="text-sky-500 dark:text-sky-400">
+                        Sarah Dayan
+                      </div>
+                      <div className="text-slate-700 dark:text-slate-500">
+                        Staff Engineer, Algolia
+                      </div>
+                    </figcaption>
+                  </div>
                 </div>
                 <div className="flex items-center justify-end p-6 border-t border-solid border-blueGray-200 rounded-b">
                   <button
