@@ -1,13 +1,14 @@
-import Modal from "./components/Modal";
 import Loader from "./components/Loader";
 import Button from "./components/Button";
 import TextField from "./components/TextField";
-import ProgressBar from "./components/Loader";
+import Modal from "./components/Modal";
+import MyTable from "./components/table";
 
 const App = () => {
   return (
     <div className="App h-screen flex flex-col items-center justify-center bg-purple-200">
       <br /> <br />
+      <MyTable />
       <Modal />
       <br />
       <Button />
