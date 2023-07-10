@@ -3,23 +3,12 @@ import Loader from "./components/Loader";
 import Button from "./components/Button";
 import TextField from "./components/TextField";
 import ProgressBar from "./components/Loader";
+
 const App = () => {
   return (
     <div className="App h-screen flex flex-col items-center justify-center bg-purple-200">
       <br /> <br />
-      <Modal
-        title="Info"
-        header="Header"
-        body="EXAMPLE FOR BODY"
-        footer="Button"
-        visible={false}
-        setVisible={function (): void {
-          throw new Error("Function not implemented.");
-        }}
-        blur={false}
-        preventClose={false}
-        closeButton={false}
-      />
+      <Modal />
       <br />
       <Button />
       <br />
