@@ -1,6 +1,5 @@
 import React, { useContext } from "react";
 import { NextComponentType } from "next";
-
 import { FeedbackContext } from "../context/feedbackContext";
 import { Props } from "../types/generic";
 
