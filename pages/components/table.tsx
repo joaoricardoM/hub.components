@@ -5,9 +5,15 @@ import { BiCalendarEvent } from "react-icons/bi";
 import { FaUser } from "react-icons/fa";
 import { MdLocationOn } from "react-icons/md";
 import { RiLockPasswordFill } from "react-icons/ri";
+import Link from "next/link";
+import { ReactElement } from "react";
+
+interface CellProps {
+  children: ReactElement;
+}
 
 const IconTable = () => {
-  const icons = [
+  const icons: ReactElement<CellProps>[] = [
     <AiOutlineHome size={30} />,
     <AiOutlineMail size={30} />,
     <AiOutlinePhone size={30} />,
@@ -15,6 +21,23 @@ const IconTable = () => {
     <FaUser size={30} />,
     <MdLocationOn size={30} />,
     <RiLockPasswordFill size={30} />,
+  ];
+
+  const rows: ReactElement<CellProps>[][] = [
+    [
+      { icon: icons[0], link: "/pagina/1-1" },
+      { icon: icons[1], link: "/pagina/1-2" },
+      { icon: icons[2], link: "/pagina/1-3" },
+    ],
+    [
+      { icon: icons[3], link: "/pagina/2-1" },
+      { icon: icons[4], link: "/pagina/2-2" },
+      { icon: icons[5], link: "/pagina/2-3" },
+    ],
+    [
+      { icon: icons[6], link: "/pagina/3-1" },
+      // Adicione mais ícones e links conforme necessário
+    ],
   ];
 
   return (
@@ -31,24 +54,18 @@ const IconTable = () => {
           <Table.Column>Column 1</Table.Column>
           <Table.Column>Column 2</Table.Column>
           <Table.Column>Column 3</Table.Column>
-          <Table.Column>Column 4</Table.Column>
-          <Table.Column>Column 5</Table.Column>
-          <Table.Column>Column 6</Table.Column>
-          <Table.Column>Column 7</Table.Column>
-          <Table.Column>Column 8</Table.Column>
         </Table.Header>
         <Table.Body>
-          {icons.map((icon, index) => (
-            <Table.Row key={index}>
-              <Table.Cell>{index + 1}</Table.Cell>
-              <Table.Cell>{icon}</Table.Cell>
-              <Table.Cell>{icon}</Table.Cell>
-              <Table.Cell>{icon}</Table.Cell>
-              <Table.Cell>{icon}</Table.Cell>
-              <Table.Cell>{icon}</Table.Cell>
-              <Table.Cell>{icon}</Table.Cell>
-              <Table.Cell>{icon}</Table.Cell>
-              <Table.Cell>{icon}</Table.Cell>
+          {rows.map((row, rowIndex) => (
+            <Table.Row key={rowIndex}>
+              <Table.Cell>{rowIndex + 1}</Table.Cell>
+              {row.map((cell, cellIndex) => (
+                <Table.Cell key={cellIndex}>
+                  <Link href={cell.link} passHref>
+                    <a>{cell.icon}</a>
+                  </Link>
+                </Table.Cell>
+              ))}
             </Table.Row>
           ))}
         </Table.Body>
