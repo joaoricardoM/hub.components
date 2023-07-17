@@ -23,7 +23,7 @@ const IconTable = () => {
     <RiLockPasswordFill size={30} />,
   ];
 
-  const rows: ReactElement<CellProps>[][] = [
+  const rows: { icon: ReactElement<CellProps>; link: string }[][] = [
     [
       { icon: icons[0], link: "/pagina/1-1" },
       { icon: icons[1], link: "/pagina/1-2" },
